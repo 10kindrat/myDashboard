@@ -12,6 +12,7 @@
 		.card{background:#fff;border-radius:8px;padding:16px;box-shadow:0 1px 4px rgba(16,24,40,.06)}
 		footer{text-align:center;color:#666;padding:24px 0;font-size:13px}
 	</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header>
@@ -20,22 +21,22 @@
 	<main class="container">
 		<section class="grid">
 			<div class="card">
-				<h2 style="margin:0 0 8px 0;font-size:16px">오늘의 일정</h2>
-				<p style="margin:0;color:#444">일정이 없습니다.</p>
+				<h2>오늘의 일정</h2>
+				<p>일정이 없습니다.</p>
 			</div>
 			<div class="card">
-				<h2 style="margin:0 0 8px 0;font-size:16px">메모</h2>
-				<p style="margin:0;color:#444">새 메모를 추가하세요.</p>
+				<h2>메모</h2>
+				<p>새 메모를 추가하세요.</p>
 			</div>
 			<div class="card", onclick="clicked()">
-				<h2 style="margin:0 0 8px 0;font-size:16px">할일</h2>
-				<ul style="margin:0;padding-left:18px;color:#444">
-					<li>할 일을 추가하세요</li>
+				<h2>할일</h2>
+				<ul id="todo-list">
+					<li id="empty_todo">할 일을 추가하세요</li>
 				</ul>
 			</div>
 			<div class="card">
-				<h2 style="margin:0 0 8px 0;font-size:16px">날씨</h2>
-				<p style="margin:0;color:#444">지역을 설정하세요.</p>
+				<h2>날씨</h2>
+				<p>지역을 설정하세요.</p>
 			</div>
 		</section>
 	</main>
