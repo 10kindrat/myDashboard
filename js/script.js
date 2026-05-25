@@ -41,3 +41,28 @@ function clickTodo() {
 
 }
 
+function updateClock() {
+    const clock = document.getElementById("clock");
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+    clock.textContent = `${hours}:${minutes}:${seconds}`;
+
+    // 아날로그 시계 업데이트
+    const hourHand = document.getElementById("hour");
+    const minuteHand = document.getElementById("minute");
+    const secondHand = document.getElementById("second");
+
+    const hourAngle = (now.getHours() % 12) * 30 + (now.getMinutes() / 60) * 30 - 90; // 시계 방향으로 30도씩 회전, 12시간마다 한 바퀴 돌도록 계산
+    const minuteAngle = now.getMinutes() * 6 + (now.getSeconds() / 60) * 6 - 90; // 시계 방향으로 6도씩 회전, 60분마다 한 바퀴 돌도록 계산
+    const secondAngle = now.getSeconds() * 6 - 90; // 시계 방향으로 6도씩 회전, 60초마다 한 바퀴 돌도록 계산
+
+    hourHand.style.transform = `rotate(${hourAngle}deg)`;
+    minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+    secondHand.style.transform = `rotate(${secondAngle}deg)`;
+    
+}
+
+setInterval(updateClock, 1000);
+updateClock(); // 페이지가 로드될 때 즉시 시계를 업데이트합니다.
